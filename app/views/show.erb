@@ -1,0 +1,18 @@
+<h1>Recipe for <%= @recipe.name %>!!</h1>
+
+<h2>Ingredients: </h2>
+  <ul>
+    <li><%= @recipe.ingredients %></li>
+  </ul>
+
+<h2>Cook Time: </h2>
+<p><%= @recipe.cook_time %></p>
+
+<button type="button" name="button"><a href="/recipes/<%= @recipe.id %>/edit">Edit?</a></button>
+
+<form action="/recipes/<%= @recipe.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>
+
+<button type="button" name="home"><a href="/recipes">Home</a></button>
